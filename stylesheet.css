@@ -1,40 +1,39 @@
-
-body{
-    background-color: #264653;
-    color: white;
-    text-align: center;
+body {
+  background-color: #264653;
+  color: white;
+  text-align: center;
 }
-#container{
-    display: flex;
-    justify-content: center;
+#bigContainer{
+  display: flex;
+  justify-content: center;
 }
-#innerContainer{
-    display: flex;
-    justify-content: start;
-}
-#controls{
-    display: flex;
-    justify-content: left;
-}
-
 #gridTable {
-    width: 100%;
-    display: flex;
-    position: relative;
-    flex-flow: row wrap;
-    justify-content: space-around;
-  }
-
-  .square {
-    background-color: white;
-    border: 0.5px solid rgb(240, 233, 233);
-    border-radius: 0.5rem;
-  }
-  
-.coloredSquare{
-    background-color: #899D78;
-  }
-#mouseMoving{
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-flow: row wrap;
+  justify-content: space-around;
 }
-#mouseClick{  
+
+.square {
+  background-color: white;
+  border: 0.5px solid rgb(240, 233, 233);
+  border-radius: 0.5rem;
+}
+.coloredSquare {
+  background-color: #899d78;
+}
+.coloredSquareClicked {
+  background-color: black;
+}
+#mouseMoving {
+  background-color: #899d78;
+  color: white;
+}
+#mouseClick {
+  color: white;
+}
+#resetBtn {
+  background-color: black;
+  color: white;
 }

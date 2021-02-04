@@ -7,18 +7,19 @@
     <title>Etch A Sketch</title>
   </head>
   <body>
-    <input type="button" id="resetBtn" value="Reset">
-    <input type="button" id="mouseMoving" name="move mouse to paint" value="Move" onclick="mouseMovingToPaint()">
-    <input type="button" id="mouseClick" name="click mouse to paint" value="Click" onclick="mouseClickToPaint()">
-
     <h1>Etch a Sketch</h1>
-    <div id="container">
-      <div id="innerContainer">
-        <div id="controls"></div>
 
-      </div>
+  
+    <div id="bigContainer">
+      <input type="button" id="resetBtn" value="CLEAR">
+      <button><input type="color" value="#FA824C" id="userColor"></button>
+      <input type="button" id="mouseClick" value="Click">  
+      <button> <input type="color" value="#A2D729" id="userMoveColor"></button>
+      <input type="button" id="mouseMoving" value="Move">  
+
       <div id="gridTable"> </div>
     </div>
+  </div>
     <script src="myscript.js"></script>
   </body>
 </html>

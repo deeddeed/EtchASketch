@@ -2,8 +2,13 @@ const grid = document.getElementById("gridTable");
 const resetBtn = document.getElementById("resetBtn");
 let mouseMoveBtn = document.getElementById("mouseMoving");
 let mouseClickBtn = document.getElementById("mouseClick");
+const userPickedColor = document.getElementById("userColor");
+const userPickedMoveColor = document.getElementById("userMoveColor");
+let clickColor = "#FA824C";
+let gridSize = 64;
+let moveColor = "#A2D729";
 
-createGrid(64);
+createGrid(gridSize);
 
 // create the different divs
 function createDiv(size) {
@@ -23,36 +28,33 @@ function createGrid(gridSize) {
     }
   }
 }
-
-// Change the color with mouse click
-function mouseClickToPaint(){
-
-  grid.addEventListener("click", function (e) {
-    if (e.target.matches(".square")) {
-      e.target.classList.add("coloredSquare");
-      console.log("mouse is CLICKING");
-      mouseClickBtn.style.backgroundColor = "teal";   
-      mouseMoveBtn.style.backgroundColor = "white";      
-   
-    }
-  });
+//change the color the user picks for the MOUSE MOVE FUNCTION
+function userMoveColorPick(event){
+  moveColor = event.target.value;
+  mouseMoveBtn.style.backgroundColor = moveColor;
+}
+//change the color to that the user picks for the MOUSE CLICK FUNCTION
+function userColorPicked(event) {
+  clickColor = event.target.value;
+  mouseClickBtn.style.backgroundColor = clickColor;
 }
 
-//change the color with moving mouse
-function mouseMovingToPaint() {
+// Change the color with mouse click
+grid.addEventListener("click", function (e) {
+  if (e.target.matches(".square")) {
+    e.target.style.backgroundColor = clickColor; 
+    console.log("mouse is CLICKING");
+    console.log(clickColor);
+  }
+});
 
-  grid.addEventListener("mouseover", function (e) {
-    if (e.target.matches(".square")) {
-      e.target.classList.add("coloredSquare");
-      console.log("mouse is moving");
-      mouseMoveBtn.style.backgroundColor = "teal";   
-      mouseClickBtn.style.backgroundColor = "white";      
-   
-    }
-  });
-}  
-
-
+//change the color with mouse move
+grid.addEventListener("mouseover", function (e) {
+  if (e.target.matches(".square")) {
+    e.target.style.backgroundColor = moveColor;
+    console.log("mouse is moving");
+  }
+});
 
 // resets the grid
 function reset() {
@@ -60,10 +62,10 @@ function reset() {
     grid.removeChild(grid.lastChild);
   }
   createGrid(gridSize);
-  mouseMoveBtn.style.backgroundColor = "white";      
-  mouseClickBtn.style.backgroundColor = "white";      
-
-
 }
 
 resetBtn.addEventListener("click", reset);
+userPickedColor.addEventListener("change", userColorPicked, false);
+userPickedMoveColor.addEventListener("change", userMoveColorPick, false);
+mouseClickBtn.style.backgroundColor = clickColor;
+mouseMoveBtn.style.backgroundColor = moveColor;
