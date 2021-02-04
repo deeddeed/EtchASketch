@@ -3,31 +3,29 @@ body {
   color: white;
   text-align: center;
 }
+
+#gridTable {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  justify-content: center;
+  
+}
 #bigContainer{
   display: flex;
   justify-content: center;
 }
-#gridTable {
-  width: 100%;
-  display: flex;
-  position: relative;
-  flex-flow: row wrap;
-  justify-content: space-around;
+#controls{
+  padding: 50px;
 }
-
 .square {
   background-color: white;
   border: 0.5px solid rgb(240, 233, 233);
   border-radius: 0.5rem;
 }
-.coloredSquare {
-  background-color: #899d78;
-}
-.coloredSquareClicked {
-  background-color: black;
-}
+
+
 #mouseMoving {
-  background-color: #899d78;
   color: white;
 }
 #mouseClick {

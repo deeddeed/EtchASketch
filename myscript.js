@@ -5,12 +5,15 @@ let mouseClickBtn = document.getElementById("mouseClick");
 const userPickedColor = document.getElementById("userColor");
 const userPickedMoveColor = document.getElementById("userMoveColor");
 let clickColor = "#FA824C";
-let gridSize = 64;
+let gridSize = 2184;
 let moveColor = "#A2D729";
+let slider = 15;
 
+//createGrid(gridSize);
+console.log(slider.value);
 createGrid(gridSize);
 
-// create the different divs
+// create the size of the squares
 function createDiv(size) {
   const div = document.createElement("div");
   div.classList.add("square");
@@ -20,13 +23,14 @@ function createDiv(size) {
   return div;
 }
 
-// create the grid
+//create the grid and distribute the squares
 function createGrid(gridSize) {
-  for (let i = 0; i < gridSize; i++) {
+  // for (let i = 0; i < gridSize; i++) {
     for (let j = 0; j < gridSize; j++) {
-      grid.appendChild(createDiv(20));
+      grid.appendChild(createDiv(slider));
+      console.log(gridSize + " j ist " + j);
     }
-  }
+  
 }
 //change the color the user picks for the MOUSE MOVE FUNCTION
 function userMoveColorPick(event){
