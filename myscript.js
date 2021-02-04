@@ -1,11 +1,11 @@
 const grid = document.getElementById("gridTable");
-let gridSize = 1;
+let gridSize = 25;
 let randomColor = document.getElementById("randomColor");
 const startBtn = document.getElementById("startbtn");
-let squareSize = 10;
+let squareSize = 5;
 
-createGrid(squareSize);
-console.log(squareSize);
+createGrid(gridSize);
+console.log(gridSize);
 
 // create the different divs
 
@@ -24,12 +24,13 @@ function createGrid(gridSize) {
   for (let i = 0; i < gridSize; i++) {
     for (let j = 0; j < gridSize; j++) {
       grid.appendChild(createDiv(grid.clientWidth / gridSize));
+      console.log(gridSize);
     }
   }
 }
 
-// Change the color with mouse hover
-grid.addEventListener("click", function (e) {
+// Change the color with mouse click
+grid.addEventListener("mouseover", function (e) {
   if (e.target.matches(".square")) {
     e.target.classList.add("coloredSquare");
     console.log("0");
@@ -41,7 +42,7 @@ function reset() {
     while (grid.firstChild) {
       grid.removeChild(grid.lastChild);
     }
-    createGrid(squareSize);
+    createGrid(gridSize);
     console.log(squareSize);
   }
 
