@@ -25,12 +25,10 @@ function createDiv(size) {
 
 //create the grid and distribute the squares
 function createGrid(gridSize) {
-  // for (let i = 0; i < gridSize; i++) {
     for (let j = 0; j < gridSize; j++) {
       grid.appendChild(createDiv(slider));
       console.log(gridSize + " j ist " + j);
     }
-  
 }
 //change the color the user picks for the MOUSE MOVE FUNCTION
 function userMoveColorPick(event){
