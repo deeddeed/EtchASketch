@@ -19,14 +19,14 @@ body{
 
 #gridTable {
     width: 100%;
-    height: 5rem;
     display: flex;
-    position: sticky;
+    position: relative;
     flex-flow: row wrap;
     justify-content: space-around;
   }
 
   .square {
+    background-color: white;
     border: 0.5px solid rgb(240, 233, 233);
     border-radius: 0.5rem;
   }
@@ -34,3 +34,7 @@ body{
 .coloredSquare{
     background-color: #899D78;
   }
+#mouseMoving{
+}
+#mouseClick{  
+}
