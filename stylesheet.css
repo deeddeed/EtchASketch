@@ -20,7 +20,7 @@ body {
 }
 .square {
   /* border: 0.1px thin; */
-  border-radius: 50%; 
+  border-radius: 100%; 
 }
 
 #mouseMoving {

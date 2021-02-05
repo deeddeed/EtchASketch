@@ -7,6 +7,7 @@ let randomBackground = document.getElementById("randomBackground");
 const userPickedColor = document.getElementById("userColor");
 const userPickedMoveColor = document.getElementById("userMoveColor");
 const userBackground = document.getElementById("userBackground");
+const eraserBtn = document.getElementById("eraser");
 
 
 let slider = document.getElementById("borderRange");
@@ -20,6 +21,11 @@ let divColor = "rgb(255,255,255)";
 let check = "false";
 
 createGrid(gridSize);
+
+function eraserButton() {
+  moveColor = divColor;
+  console.log(moveColor);
+}
 
 //STAGE I
 //create the grid and distribute the squares
@@ -147,6 +153,7 @@ function reset() {
   }
   divColor = "white";
   check = "false";
+  randomBackground.style.backgroundColor = divColor;
   createGrid(gridSize);
 }
 
