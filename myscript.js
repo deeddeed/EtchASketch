@@ -8,34 +8,32 @@ const userPickedColor = document.getElementById("userColor");
 const userPickedMoveColor = document.getElementById("userMoveColor");
 const userBackground = document.getElementById("userBackground");
 const eraserBtn = document.getElementById("eraser");
+const userGridSize = document.getElementById("bigger");
 
-
+//Slider
 let slider = document.getElementById("borderRange");
 let sliderValue = slider.value;
+
 const grid = document.getElementById("gridTable");
 let clickColor = "#FA824C";
 let moveColor = "#A2D729";
 let divs = 12;
-let gridSize = 6834;
+let gridSize = 6968;
 let divColor = "rgb(255,255,255)";
 let check = "false";
 
+
 createGrid(gridSize);
 
-function eraserButton() {
-  moveColor = divColor;
-  console.log(moveColor);
-}
-
 //STAGE I
-//create the grid and distribute the squares
+//CREATE the grid and distribute the squares
 function createGrid(gridSize) {
   for (let j = 0; j < gridSize; j++) {
     grid.appendChild(createDiv(divs));
   }
 }
 //STAGE II
-// create the size of the squares
+//CREATE the size of the squares
 function createDiv(size) {
   const div = document.createElement("div");
   div.classList.add("square");
@@ -145,6 +143,12 @@ grid.addEventListener("mouseover", function (e) {
     console.log("mouse is moving");
   }
 });
+
+//ERASER BUTTON
+function eraserButton() {
+  moveColor = divColor;
+  console.log(moveColor);
+}
 
 // resets the grid
 function reset() {
