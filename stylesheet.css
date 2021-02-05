@@ -34,3 +34,7 @@ body {
   background-color: black;
   color: white;
 }
+#randomPaint{
+  background-color: rgb(8, 8, 8);
+  color: white;
+}
