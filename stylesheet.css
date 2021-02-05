@@ -19,11 +19,10 @@ body {
   padding: 50px;
 }
 .square {
-  background-color: white;
+  background-color: rgb(8, 8, 8);
   border: 0.5px solid rgb(240, 233, 233);
   border-radius: 0.5rem;
 }
-
 
 #mouseMoving {
   color: white;
