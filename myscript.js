@@ -8,26 +8,18 @@ const userPickedColor = document.getElementById("userColor");
 const userPickedMoveColor = document.getElementById("userMoveColor");
 const userBackground = document.getElementById("userBackground");
 
-const grid = document.getElementById("gridTable");
 
+let slider = document.getElementById("borderRange");
+let sliderValue = slider.value;
+const grid = document.getElementById("gridTable");
 let clickColor = "#FA824C";
 let moveColor = "#A2D729";
-let divs = 15;
-let gridSize = 2184;
+let divs = 12;
+let gridSize = 6834;
 let divColor = "rgb(255,255,255)";
 let check = "false";
 
 createGrid(gridSize);
-console.log(check);
-
-function paintRandomPic() {
-  while (grid.firstChild) {
-    grid.removeChild(grid.lastChild);
-  }
-  check = "true";
-  createGrid(gridSize);
-  console.log(check);
-}
 
 //STAGE I
 //create the grid and distribute the squares
@@ -52,9 +44,9 @@ function createDiv(size) {
   }else{
   div.style.backgroundColor = divColor;
   }
+  div.style.borderRadius = sliderValue + "%";
   div.style.width = `${size}px`;
   div.style.height = `${size}px`;
-
   return div;
 }
 
@@ -118,7 +110,20 @@ function mouseMoveBtnRandom() {
     " )";
   mouseMoveBtn.style.backgroundColor = moveColor;
 }
+//RANDOM COLOR ON EACH DIV
+function paintRandomPic() {
+  while (grid.firstChild) {
+    grid.removeChild(grid.lastChild);
+  }
+  check = "true";
+  createGrid(gridSize);
+  console.log(check);
+}
 
+function changeSquare(){
+    sliderValue = slider.value;
+    reset();
+}
 //CHANGE the color with MOUSE CLICK
 grid.addEventListener("click", function (e) {
   if (e.target.matches(".square")) {
@@ -140,7 +145,7 @@ function reset() {
   while (grid.firstChild) {
     grid.removeChild(grid.lastChild);
   }
-  divColor = "rgb(255,255,255)";
+  divColor = "white";
   check = "false";
   createGrid(gridSize);
 }
@@ -153,6 +158,7 @@ userBackground.addEventListener("change", userChooseBackground, false);
 mouseClickBtn.addEventListener("click", mouseClickBtnRandom);
 mouseMoveBtn.addEventListener("click", mouseMoveBtnRandom);
 randomPaint.addEventListener("click", paintRandomPic);
+slider.addEventListener("change", changeSquare);
 
 randomBackground.style.backgroundColor = divColor;
 mouseClickBtn.style.backgroundColor = clickColor;
