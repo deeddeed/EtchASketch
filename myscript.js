@@ -16,10 +16,10 @@ let sliderValue = slider.value;
 
 const grid = document.getElementById("gridTable");
 let clickColor = "#FA824C";
-let moveColor = "#A2D729";
+let moveColor = "#558C8C";
 let divs = 12;
-let gridSize = 6968;
-let divColor = "rgb(255,255,255)";
+let gridSize = 7168;
+let divColor = "#EFF7FF";
 let check = "false";
 
 
@@ -129,7 +129,7 @@ function changeSquare(){
     reset();
 }
 //CHANGE the color with MOUSE CLICK
-grid.addEventListener("click", function (e) {
+grid.addEventListener("mousedown", function (e) {
   if (e.target.matches(".square")) {
     e.target.style.backgroundColor = clickColor;
     console.log("mouse is CLICKING");
@@ -155,7 +155,7 @@ function reset() {
   while (grid.firstChild) {
     grid.removeChild(grid.lastChild);
   }
-  divColor = "white";
+  divColor = "#EFF7FF";
   check = "false";
   randomBackground.style.backgroundColor = divColor;
   createGrid(gridSize);

@@ -7,22 +7,27 @@
     <title>Etch A Sketch</title>
   </head>
   <body>
-    <h1>Etch a Sketch</h1>
-    <div id="controls">
-      <input type="button" id="resetBtn" value="CLEAR">
-      <input type="color" value="#FA824C" id="userColor">
-      <input type="button" id="mouseClick" value="Click">  
-      <input type="color" value="#A2D729" id="userMoveColor">
-      <input type="button" id="mouseMoving" value="Move">  
-      <input type="color" value="#A2D729" id="userBackground">
-      <input type="button" id="randomBackground" value="Random Background">
-      <input type="button" id="randomPaint" value="Psychedelic Button!">
-      <input type="range"  id="borderRange" min="0" max="100" value="0">
-      <input type="button" id="eraser" value="Eraser" onclick="eraserButton()">
+    
 
-
-    </div>
     <div id="bigContainer">
+
+      <div id="controls">
+        <h1>Etch a Sketch</h1>
+          <input type="color" value="#FA824C" id="userColor" value="Choose your Color">            
+          <input type="button" id="mouseClick" value="Click">  
+       
+          <input type="color" value="#A2D729" id="userMoveColor">
+          <input type="button" id="mouseMoving" value="Move">  
+        
+          <input type="color" value="#A2D729" id="userBackground">
+          <input type="button" id="randomBackground" value="Background">
+          <input type="button" id="randomPaint" value="Psychedelic Button!">
+          <input type="range"  id="borderRange" min="0" max="100" value="0">
+          <input type="button" id="eraser" value="Eraser" onclick="eraserButton()">
+          <input type="button" id="resetBtn" value="RESET">
+
+      </div>
+
     <div id="gridTable"></div>
     </div>
 
