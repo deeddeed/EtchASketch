@@ -7,29 +7,32 @@
     <title>Etch A Sketch</title>
   </head>
   <body>
-    
-
     <div id="bigContainer">
-
       <div id="controls">
         <h1>Etch a Sketch</h1>
-          <input type="color" value="#FA824C" id="userColor" value="Choose your Color">            
-          <input type="button" id="mouseClick" value="Click">  
-       
-          <input type="color" value="#A2D729" id="userMoveColor">
-          <input type="button" id="mouseMoving" value="Move">  
-        
-          <input type="color" value="#A2D729" id="userBackground">
+        <div class="colorCombo">
           <input type="button" id="randomBackground" value="Background">
-          <input type="button" id="randomPaint" value="Psychedelic Button!">
+          <input type="color" value="#A2D729" id="userBackground">
+        </div>
+        <div class="colorCombo">
+          <input type="button" id="mouseClick" value="Click">  
+
+          <input type="color" value="#FA824C" id="userColor" value="Choose your Color">            
+        </div>
+        <div class="colorCombo">
+          <input type="button" id="mouseMoving" value="Move">  
+          <input type="color" value="#A2D729" id="userMoveColor">
+        </div>
+
+          <input type="button" id="randomPaint" value="Psychedelic!">
           <input type="range"  id="borderRange" min="0" max="100" value="0">
           <input type="button" id="eraser" value="Eraser" onclick="eraserButton()">
           <input type="button" id="resetBtn" value="RESET">
+          <input type="range" id="squareSlider" min="16" step="16" max="96" value="96"> 
 
       </div>
 
-    <div id="gridTable"></div>
-    </div>
+    <div id="gridDivs"></div>
 
     <script src="myscript.js"></script>
   </body>

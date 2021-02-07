@@ -8,49 +8,56 @@ const userPickedColor = document.getElementById("userColor");
 const userPickedMoveColor = document.getElementById("userMoveColor");
 const userBackground = document.getElementById("userBackground");
 const eraserBtn = document.getElementById("eraser");
-const userGridSize = document.getElementById("bigger");
+ 
 
 //Slider
 let slider = document.getElementById("borderRange");
 let sliderValue = slider.value;
+let squareSlider = document.getElementById("squareSlider");
+let squareValue = squareSlider.value;
 
-const grid = document.getElementById("gridTable");
+const grid = document.getElementById("gridDivs");
 let clickColor = "#FA824C";
 let moveColor = "#558C8C";
-let divs = 12;
-let gridSize = 7168;
+let size = squareValue;
 let divColor = "#EFF7FF";
 let check = "false";
+let divSize = 600/size;
 
 
-createGrid(gridSize);
+createGrid(size); 
 
 //STAGE I
-//CREATE the grid and distribute the squares
-function createGrid(gridSize) {
-  for (let j = 0; j < gridSize; j++) {
-    grid.appendChild(createDiv(divs));
+//CREATE the grid 
+function createGrid(size) {
+  for (var rows = 0; rows < size; rows++) {
+    for (var columns = 0; columns < size; columns++){
+      grid.append(createDiv());     
+    }  
+    console.log(size);
+
   }
 }
 //STAGE II
-//CREATE the size of the squares
-function createDiv(size) {
+//CREATE EACH squares
+function createDiv() {
   const div = document.createElement("div");
   div.classList.add("square");
-  if(check == "true"){
-    div.style.backgroundColor =     "rgb( " +
-    Math.floor(Math.random() * (0 + 255)) +
-    " " +
-    Math.floor(Math.random() * (0 + 255)) +
-    " " +
-    Math.floor(Math.random() * (0 + 255)) +
-    " )";;
-  }else{
-  div.style.backgroundColor = divColor;
+  if (check == "true") {
+    div.style.backgroundColor =
+      "rgb( " +
+      Math.floor(Math.random() * (0 + 255)) +
+      " " +
+      Math.floor(Math.random() * (0 + 255)) +
+      " " +
+      Math.floor(Math.random() * (0 + 255)) +
+      " )";
+  } else {
+    div.style.backgroundColor = divColor;
   }
+  div.style.height = `${800/size}px`;
+  div.style.width = `${1200/size}px`;
   div.style.borderRadius = sliderValue + "%";
-  div.style.width = `${size}px`;
-  div.style.height = `${size}px`;
   return div;
 }
 
@@ -60,7 +67,7 @@ function userChooseBackground(event) {
   while (grid.firstChild) {
     grid.removeChild(grid.lastChild);
   }
-  createGrid(gridSize);
+  createGrid(size);
   randomBackground.style.backgroundColor = divColor;
 }
 //USER picked Color for MOUSE MOVE
@@ -87,7 +94,7 @@ function changeBackground() {
     " " +
     Math.floor(Math.random() * (0 + 255)) +
     " )";
-  createGrid(gridSize);
+  createGrid(size);
   randomBackground.style.backgroundColor = divColor;
 }
 //RANDOM color for the mouse CLICK BUTTON
@@ -120,13 +127,18 @@ function paintRandomPic() {
     grid.removeChild(grid.lastChild);
   }
   check = "true";
-  createGrid(gridSize);
+  createGrid(size);
   console.log(check);
 }
-
-function changeSquare(){
-    sliderValue = slider.value;
-    reset();
+//SLIDER Border
+function changeSquare() {
+  sliderValue = slider.value;
+  reset();
+}
+//SLIDER Square Size
+function changeSquareSize(){
+  squareValue = squareSlider.value;
+  reset();
 }
 //CHANGE the color with MOUSE CLICK
 grid.addEventListener("mousedown", function (e) {
@@ -158,7 +170,7 @@ function reset() {
   divColor = "#EFF7FF";
   check = "false";
   randomBackground.style.backgroundColor = divColor;
-  createGrid(gridSize);
+  createGrid(size);
 }
 
 resetBtn.addEventListener("click", reset);
@@ -170,6 +182,7 @@ mouseClickBtn.addEventListener("click", mouseClickBtnRandom);
 mouseMoveBtn.addEventListener("click", mouseMoveBtnRandom);
 randomPaint.addEventListener("click", paintRandomPic);
 slider.addEventListener("change", changeSquare);
+squareSlider.addEventListener("change", changeSquareSize);
 
 randomBackground.style.backgroundColor = divColor;
 mouseClickBtn.style.backgroundColor = clickColor;
