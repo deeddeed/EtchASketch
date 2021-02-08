@@ -138,6 +138,8 @@ function changeSquare() {
 //SLIDER Square Size
 function changeSquareSize(){
   squareValue = squareSlider.value;
+  
+  console.log("Test Slider square function value is " + squareValue);
   reset();
 }
 //CHANGE the color with MOUSE CLICK
@@ -170,6 +172,8 @@ function reset() {
   divColor = "#EFF7FF";
   check = "false";
   randomBackground.style.backgroundColor = divColor;
+  console.log("size is " + size);
+  size = squareValue;
   createGrid(size);
 }
 
