@@ -56,7 +56,7 @@ function createDiv() {
     div.style.backgroundColor = divColor;
   }
   div.style.height = `${800/size}px`;
-  div.style.width = `${1200/size}px`;
+  div.style.width = `${1600/size}px`;
   div.style.borderRadius = sliderValue + "%";
   return div;
 }

@@ -3,36 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="stylesheet.css" type="text/css" />
     <title>Etch A Sketch</title>
   </head>
   <body>
+    <div class="words words-1">
+      <span>E</span>
+      <span>T</span>
+      <span>C</span>
+      <span>H</span>
+      <span> </span>
+      <span id="bigA">A</span>
+      <span> </span>
+      <span>S</span>
+      <span>K</span>
+      <span>E</span>
+      <span>T</span>
+      <span>C</span>
+      <span>H</span>
+    </div>
+
     <div id="bigContainer">
-      <div id="controls">
-        <h1>Etch a Sketch</h1>
-        <div class="colorCombo">
-          <input type="button" id="randomBackground" value="Background">
-          <input type="color" value="#A2D729" id="userBackground">
-        </div>
-        <div class="colorCombo">
-          <input type="button" id="mouseClick" value="Click">  
 
-          <input type="color" value="#FA824C" id="userColor" value="Choose your Color">            
-        </div>
-        <div class="colorCombo">
-          <input type="button" id="mouseMoving" value="Move">  
-          <input type="color" value="#A2D729" id="userMoveColor">
-        </div>
-
-          <input type="button" id="randomPaint" value="Psychedelic!">
-          <input type="range"  id="borderRange" min="0" max="100" value="0">
-          <input type="button" id="eraser" value="Eraser" onclick="eraserButton()">
-          <input type="button" id="resetBtn" value="RESET">
-          <input type="range" id="squareSlider" min="16" step="16" max="96" value="96"> 
-
-      </div>
+    <div class="buttons">
+      <img src="Pics/rubberSmall.png" id="eraser" value="Eraser" onclick="eraserButton()">
+      <img src="Pics/frogButton.png" id="randomPaint" value="Psychedelic!">
+    </div>      
 
     <div id="gridDivs"></div>
+
+    <div class="dropdown">
+      <div class="hoverText">
+        <img src="Pics/smallFinger.png">
+      </div> 
+      <div class="dropdown-content">
+    <div id="controls">
+      <h1>Settings</h1>         
+      <div class="colorCombo">
+        <p>Random Background? Or choose your favorite color:</p>
+        <input type="button" id="randomBackground" value="Background">
+        <input type="color" value="#A2D729" id="userBackground">
+      </div>
+      <div class="colorCombo">
+        <p>Left mouse click color:</p>
+        <input type="button" id="mouseClick" value="Click">  
+        <input type="color" value="#FA824C" id="userColor" value="Choose your Color">            
+      </div>
+      <div class="colorCombo">
+        <p>Random Paint Color Button or Choose your color:</p>
+        <input type="button" id="mouseMoving" value="Move">  
+        <input type="color" value="#A2D729" id="userMoveColor">
+      </div>
+    <div class="colorCombo">
+      </div>
+      <p>Square or Circle and whats between:</p>
+        <input type="range"  id="borderRange" min="0" max="60" value="0">
+      <p>Big or Small items:</p>
+        <input type="range" id="squareSlider" min="10" step="10" max="80" value="10">         
+
+        <input type="button" id="resetBtn" value="RESET">
+
+
+    </div>
+  </div>
+</div>
+
+
+</div>
 
     <script src="myscript.js"></script>
   </body>

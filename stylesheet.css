@@ -1,23 +1,143 @@
-@font-face {
-  font-family: customFont;
-  src: url(font/AttackGraffiti-3zRBM.ttf);
-}
-
 body {
   background-color: #231123;
   color: white;
+  font-family: "Stalinist One", cursive;
+  overflow-x: hidden;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: relative;
+  max-width: 700px;
+  min-height: 800px;
+  background-color: #231123da;
+  border-radius: 10%;
+  box-shadow: 10px 10px 100px white;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.words{
+  color: #231123;
+  font-size: 0px;
+  line-height: 1;
   text-align: center;
-  font-family: customFont;
-  font-size: 20px;
+}
+.words span{
+  font-size: 60px;
+  display: inline-block;
+  -webkit-animation: move 20s ease-in-out infinite;
+          animation: move 20s ease-in-out infinite;
+}
+#bigA{
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 5.5s;
+}
+
+ 
+.words span:nth-child(2) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+.words span:nth-child(3) {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+.words span:nth-child(4) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+.words span:nth-child(5) {
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+.words span:nth-child(6) {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+.words span:nth-child(7) {
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+}
+.words span:nth-child(8) {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+.words span:nth-child(9) {
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
+}
+.words span:nth-child(10) {
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+.words span:nth-child(11) {
+  -webkit-animation-delay: 5.5s;
+          animation-delay: 5.5s;
+}
+.words span:nth-child(12) {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+.words span:nth-child(13) {
+  -webkit-animation-delay: 6.5s;
+          animation-delay: 6.5s;
+}
+ 
+ 
+@keyframes move {
+  0% {
+    -webkit-transform: translate(-155%, 0);
+            transform: translate(-155%, 0);
+  }
+  50% {
+    text-shadow: 0 15px 40px rgba(14, 7, 14, 0.829);
+  }
+  100% {
+    color: teal;
+    -webkit-transform: translate(155%, 0);
+            transform: translate(155%, 0);
+  }
+}
+
+.buttons {
+  justify-content: center;
+  max-width: 50px;
+  max-height: 200px;
+  font-size: 28px;
+  padding: 20px;
+  background-color: #fffaff4b;
+  border-radius: 20% 0% 0% 20%;
+  box-shadow: 10px 10px 100px white;
+  cursor: pointer;
+
+}
+
+.hoverText {
+  justify-content: center;
+  max-width: 50px;
+  max-height: 50px;
+  font-size: 28px;
+  padding: 20px;
+  background-color: #2311230a;
+  border-radius: 0% 20% 20% 0%;
+  box-shadow: 10px 10px 100px white;
+  cursor: pointer;
+
 }
 
 #gridDivs {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
-  width: 1200px;
+  align-items: center;
+  width: 1600px;
   height: 800px;
   box-shadow: 10px 10px 100px white;
+  cursor: url('Pics/mouseBucket.png'), auto;	
 }
 
 #bigContainer {
@@ -25,18 +145,18 @@ body {
   justify-content: center;
   margin-bottom: 100px;
   margin-top: 50px;
-  margin-right: 100px;
+  border-radius: 50%;
 }
 #controls {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: left;
   margin-left: 50px;
   margin-right: 50px;
+  cursor: pointer;
 }
 .square {
   border-radius: 100%;
-
   background-color: white;
 }
 
@@ -51,17 +171,14 @@ body {
   background-color: black;
   color: white;
 }
-#randomPaint {
-  background-color: rgb(8, 8, 8);
-  color: white;
-}
+
 input[type="button"] {
-  width: 250px;
+  width: 350px;
   border-radius: 40px;
   color: #231123;
   margin-top: 10px;
   margin-bottom: 10px;
-  font-family: customFont;
+  font-family: "Stalinist One", cursive;
   font-size: 30px;
   padding: 10px;
 }
