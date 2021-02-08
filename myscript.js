@@ -8,6 +8,8 @@ const userPickedColor = document.getElementById("userColor");
 const userPickedMoveColor = document.getElementById("userMoveColor");
 const userBackground = document.getElementById("userBackground");
 const eraserBtn = document.getElementById("eraser");
+let clickButton = document.getElementById("clickColorButton");
+let moveButton = document.getElementById("moveColor");
  
 
 //Slider
@@ -17,12 +19,16 @@ let squareSlider = document.getElementById("squareSlider");
 let squareValue = squareSlider.value;
 
 const grid = document.getElementById("gridDivs");
+
 let clickColor = "#FA824C";
 let moveColor = "#558C8C";
 let size = squareValue;
-let divColor = "#EFF7FF";
+let divColor = "#3E505B";
 let check = "false";
 let divSize = 600/size;
+
+clickButton.style.backgroundColor = clickColor;
+moveButton.style.backgroundColor = moveColor;
 
 
 createGrid(size); 
@@ -74,11 +80,13 @@ function userChooseBackground(event) {
 function userMoveColorPick(event) {
   moveColor = event.target.value;
   mouseMoveBtn.style.backgroundColor = moveColor;
+  moveButton.style.backgroundColor = moveColor;
 }
 //USER picked color for the MOUSE CLICK
 function userColorPicked(event) {
   clickColor = event.target.value;
   mouseClickBtn.style.backgroundColor = clickColor;
+  clickButton.style.backgroundColor = clickColor;
 }
 
 //RANDOM color for the divs/squares BACKGROUND
@@ -108,6 +116,8 @@ function mouseClickBtnRandom() {
     Math.floor(Math.random() * (0 + 255)) +
     " )";
   mouseClickBtn.style.backgroundColor = clickColor;
+  clickButton.style.backgroundColor = clickColor;
+
 }
 //RANDOM color for the mouse MOVE BUTTON
 function mouseMoveBtnRandom() {
@@ -120,6 +130,7 @@ function mouseMoveBtnRandom() {
     Math.floor(Math.random() * (0 + 255)) +
     " )";
   mouseMoveBtn.style.backgroundColor = moveColor;
+  moveButton.style.backgroundColor = moveColor;
 }
 //RANDOM COLOR ON EACH DIV
 function paintRandomPic() {
@@ -130,6 +141,7 @@ function paintRandomPic() {
   createGrid(size);
   console.log(check);
 }
+
 //SLIDER Border
 function changeSquare() {
   sliderValue = slider.value;
@@ -142,6 +154,7 @@ function changeSquareSize(){
   console.log("Test Slider square function value is " + squareValue);
   reset();
 }
+
 //CHANGE the color with MOUSE CLICK
 grid.addEventListener("mousedown", function (e) {
   if (e.target.matches(".square")) {

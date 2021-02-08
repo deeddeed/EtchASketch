@@ -1,9 +1,30 @@
+@font-face {
+  font-family: myFont;
+  src: url(font/Goldman-Regular.ttf);
+}
+
 body {
-  background-color: #231123;
+  background-color: #03120E;
   color: white;
-  font-family: "Stalinist One", cursive;
+  font-family: myFont;
   overflow-x: hidden;
 }
+
+p{
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.puffer{
+  width: 50px;
+  height: 50px;
+  margin-bottom: 30px;
+  transition: 0.3s;
+}
+.puffer:hover {
+  transform: scale(1.1);
+}
+
 
 .dropdown {
   position: relative;
@@ -11,108 +32,99 @@ body {
 }
 .dropdown-content {
   display: none;
-  position: relative;
-  max-width: 700px;
-  min-height: 800px;
-  background-color: #231123da;
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background-color: #03120ec4;
   border-radius: 10%;
   box-shadow: 10px 10px 100px white;
 }
 .dropdown:hover .dropdown-content {
   display: block;
 }
-.words{
-  color: #231123;
+.words {
+  color: #03120E;
   font-size: 0px;
   line-height: 1;
   text-align: center;
 }
-.words span{
+.words span {
   font-size: 60px;
   display: inline-block;
-  -webkit-animation: move 20s ease-in-out infinite;
-          animation: move 20s ease-in-out infinite;
-}
-#bigA{
-  -webkit-animation-delay: 0.5s;
-  animation-delay: 5.5s;
+  -webkit-animation: move 23s ease-in-out infinite;
+  animation: move 10s ease-in-out infinite;
 }
 
- 
+.words span:nth-child(1) {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
 .words span:nth-child(2) {
   -webkit-animation-delay: 1s;
-          animation-delay: 1s;
+  animation-delay: 1s;
 }
 .words span:nth-child(3) {
   -webkit-animation-delay: 1.5s;
-          animation-delay: 1.5s;
+  animation-delay: 1.5s;
 }
 .words span:nth-child(4) {
   -webkit-animation-delay: 2s;
-          animation-delay: 2s;
+  animation-delay: 2s;
 }
 .words span:nth-child(5) {
   -webkit-animation-delay: 2.5s;
-          animation-delay: 2.5s;
+  animation-delay: 2.5s;
 }
 .words span:nth-child(6) {
   -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  animation-delay: 3s;
 }
 .words span:nth-child(7) {
   -webkit-animation-delay: 3.5s;
-          animation-delay: 3.5s;
+  animation-delay: 3.5s;
 }
 .words span:nth-child(8) {
   -webkit-animation-delay: 4s;
-          animation-delay: 4s;
+  animation-delay: 4s;
 }
 .words span:nth-child(9) {
   -webkit-animation-delay: 4.5s;
-          animation-delay: 4.5s;
+  animation-delay: 4.5s;
 }
 .words span:nth-child(10) {
   -webkit-animation-delay: 5s;
-          animation-delay: 5s;
+  animation-delay: 5s;
 }
 .words span:nth-child(11) {
   -webkit-animation-delay: 5.5s;
-          animation-delay: 5.5s;
+  animation-delay: 5.5s;
 }
-.words span:nth-child(12) {
-  -webkit-animation-delay: 6s;
-          animation-delay: 6s;
-}
-.words span:nth-child(13) {
-  -webkit-animation-delay: 6.5s;
-          animation-delay: 6.5s;
-}
- 
- 
+
+
 @keyframes move {
   0% {
     -webkit-transform: translate(-155%, 0);
-            transform: translate(-155%, 0);
+    transform: translate(-155%, 0);
   }
   50% {
-    text-shadow: 0 15px 40px rgba(14, 7, 14, 0.829);
+    text-shadow: 0 15px 40px rgb(0, 0, 0);
   }
   100% {
-    color: teal;
+    color: #8AB0AB;
     -webkit-transform: translate(155%, 0);
-            transform: translate(155%, 0);
+    transform: translate(155%, 0);
   }
 }
 
 .buttons {
   justify-content: center;
   max-width: 50px;
-  max-height: 200px;
+  max-height: 500px;
   font-size: 28px;
   padding: 20px;
-  background-color: #fffaff4b;
+  background-color: #8AB0AB;
   border-radius: 20% 0% 0% 20%;
-  box-shadow: 10px 10px 100px white;
+  box-shadow: 10px 10px 100px #8AB0AB;
   cursor: pointer;
 
 }
@@ -123,11 +135,19 @@ body {
   max-height: 50px;
   font-size: 28px;
   padding: 20px;
-  background-color: #2311230a;
+  background-color: #8AB0AB;
   border-radius: 0% 20% 20% 0%;
-  box-shadow: 10px 10px 100px white;
+  box-shadow: 10px 10px 100px #8AB0AB;
   cursor: pointer;
+}
 
+#clickColorButton {
+  width: 50px;
+  height: 50px;
+}
+#moveColor {
+  width: 50px;
+  height: 50px;
 }
 
 #gridDivs {
@@ -136,8 +156,7 @@ body {
   align-items: center;
   width: 1600px;
   height: 800px;
-  box-shadow: 10px 10px 100px white;
-  cursor: url('Pics/mouseBucket.png'), auto;	
+  cursor: url("Pics/mouseBucket.png"), auto;
 }
 
 #bigContainer {
@@ -167,20 +186,13 @@ body {
   color: white;
 }
 
-#resetBtn {
-  background-color: black;
-  color: white;
-}
-
 input[type="button"] {
   width: 350px;
   border-radius: 40px;
   color: #231123;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-family: "Stalinist One", cursive;
+  margin: 10px;
+  font-family: myFont;
   font-size: 30px;
-  padding: 10px;
 }
 
 input[type="color"] {
