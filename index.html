@@ -33,8 +33,9 @@
             <img src="Pics/settingsButton.png" />
             <div class="dropdown-content">
               <div id="controls">
-                <h1>Settings</h1>
                 <div class="colorCombo">
+                  <h1>Settings</h1>
+
                   <p>Random Background? Or choose your favorite color:</p>
                   <input
                     type="button"
@@ -42,8 +43,6 @@
                     value="Background"
                   />
                   <input type="color" value="#A2D729" id="userBackground" />
-                </div>
-                <div class="colorCombo">
                   <p>Left mouse click color:</p>
                   <input type="button" id="mouseClick" value="Click" />
                   <input
@@ -52,30 +51,34 @@
                     id="userColor"
                     value="Choose your Color"
                   />
-                </div>
-                <div class="colorCombo">
                   <p>Random Paint Color Button or Choose your color:</p>
                   <input type="button" id="mouseMoving" value="Move" />
                   <input type="color" value="#A2D729" id="userMoveColor" />
                 </div>
-                <div class="colorCombo"></div>
+                <div class="rangeCombo">
                 <p>Square or Circle and whats between:</p>
+                <input type="button" id="borderText" value="">
                 <input
                   type="range"
+                  class="slider"
                   id="borderRange"
                   min="0"
                   max="60"
                   value="0"
                 />
-                <p>Big or Small items:</p>
+     
+                <p>Choose how many suqares/cricles:</p>
+                <input type="button" id="squareText" value="">
                 <input
                   type="range"
                   id="squareSlider"
+                  class="slider"
                   min="10"
                   step="10"
                   max="80"
                   value="60"
                 />
+              </div>
               </div>
             </div>
           </div>
@@ -86,6 +89,7 @@
             src="Pics/rubberSmall.png"
             id="eraser"
             value="Eraser"
+            title="Rubber"
             onclick="eraserButton()"
           />
         </div>
@@ -94,6 +98,7 @@
             src="Pics/clickColorButton.png"
             id="clickColorButton"
             value="clickColorButton"
+            title="Random Color when you click the left Mouse Button"
             onclick="mouseClickBtnRandom()"
           />
         </div>
@@ -102,6 +107,7 @@
             src="Pics/bucketButton.png"
             id="moveColor"
             value="moveColor"
+            title="Random Color when you move your Mouse"
             onclick="mouseMoveBtnRandom()"
           />
         </div>
@@ -109,11 +115,12 @@
           <img
             src="Pics/frogButton.png"
             id="randomPaint"
+            title="Psychedelic"
             value="Psychedelic!"
           />
         </div>
         <div class="puffer">
-          <img src="Pics/resetButton.png" id="resetBtn" value="RESET" />
+          <img src="Pics/resetButton.png" id="resetBtn" title="RESET" value="RESET" />
         </div>
       </div>
 

@@ -15,8 +15,10 @@ let moveButton = document.getElementById("moveColor");
 //Slider
 let slider = document.getElementById("borderRange");
 let sliderValue = slider.value;
+document.getElementById("borderText").value = slider.value; 
 let squareSlider = document.getElementById("squareSlider");
 let squareValue = squareSlider.value;
+document.getElementById("squareText").value = squareSlider.value;
 
 const grid = document.getElementById("gridDivs");
 
@@ -145,12 +147,13 @@ function paintRandomPic() {
 //SLIDER Border
 function changeSquare() {
   sliderValue = slider.value;
+  document.getElementById('borderText').value = slider.value;
   reset();
 }
 //SLIDER Square Size
 function changeSquareSize(){
   squareValue = squareSlider.value;
-  
+  document.getElementById("squareText").value = squareSlider.value;
   console.log("Test Slider square function value is " + squareValue);
   reset();
 }

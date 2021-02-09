@@ -11,7 +11,7 @@ body {
 }
 
 p{
-  font-size: 20px;
+  font-size: 15px;
   text-decoration: underline;
 }
 
@@ -24,7 +24,37 @@ p{
 .puffer:hover {
   transform: scale(1.4);
 }
+.rangeCombo{
+  display: flex;
+  flex-direction: column;
+  margin-top: 125px;
+  margin-left: 50px;
+}
+.slider {
+  -webkit-appearance: none;
+  width: 60%;
+  height: 30px;
+  width: 350px;
+  border-radius: 40px;
+  background: #8AB0AB;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
 
+.slider:hover {
+  opacity: 1;
+}
+
+#controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin-left: 50px;
+  margin-right: 50px;
+  cursor: pointer;
+}
 .dropdown {
   position: relative;
   display: inline-block;
@@ -32,8 +62,8 @@ p{
 .dropdown-content {
   display: none;
   position: absolute;
-  width: 800px;
-  height: 800px;
+  width: 925px;
+  height: 475px;
   background-color: #03120ec4;
   border-radius: 10%;
   box-shadow: 10px 10px 100px white;
@@ -46,9 +76,10 @@ p{
   font-size: 0px;
   line-height: 1;
   text-align: center;
+
 }
 .words span {
-  font-size: 60px;
+  font-size: 120px;
   display: inline-block;
   animation: flip-scale-down-diag-2 0.5s linear both;
   -webkit-animation: move 10s ease-in-out infinite;
@@ -167,17 +198,10 @@ p{
   display: flex;
   justify-content: center;
   margin-bottom: 100px;
-  margin-top: 50px;
+  /* margin-top: 50px; */
   border-radius: 50%;
 }
-#controls {
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  margin-left: 50px;
-  margin-right: 50px;
-  cursor: pointer;
-}
+
 .square {
   border-radius: 100%;
   background-color: white;
@@ -194,14 +218,13 @@ input[type="button"] {
   width: 350px;
   border-radius: 40px;
   color: #231123;
-  margin: 10px;
   font-family: myFont;
   font-size: 30px;
 }
 
 input[type="color"] {
   border-radius: 10px;
-  background-color: aliceblue;
+  background-color: black;
 }
 #footer{
   text-align: center;
