@@ -26,20 +26,21 @@
       <span>H</span>
     </div>
 
-
-
     <div id="bigContainer">
       <div class="buttons">
-
         <div class="puffer">
           <div class="dropdown">
-              <img src="Pics/settingsButton.png" />
+            <img src="Pics/settingsButton.png" />
             <div class="dropdown-content">
               <div id="controls">
                 <h1>Settings</h1>
                 <div class="colorCombo">
                   <p>Random Background? Or choose your favorite color:</p>
-                  <input type="button" id="randomBackground" value="Background" />
+                  <input
+                    type="button"
+                    id="randomBackground"
+                    value="Background"
+                  />
                   <input type="color" value="#A2D729" id="userBackground" />
                 </div>
                 <div class="colorCombo">
@@ -59,7 +60,13 @@
                 </div>
                 <div class="colorCombo"></div>
                 <p>Square or Circle and whats between:</p>
-                <input type="range" id="borderRange" min="0" max="60" value="0" />
+                <input
+                  type="range"
+                  id="borderRange"
+                  min="0"
+                  max="60"
+                  value="0"
+                />
                 <p>Big or Small items:</p>
                 <input
                   type="range"
@@ -67,15 +74,12 @@
                   min="10"
                   step="10"
                   max="80"
-                  value="10"
+                  value="60"
                 />
               </div>
             </div>
           </div>
         </div>
-
-
-
 
         <div class="puffer">
           <img
@@ -111,10 +115,22 @@
         <div class="puffer">
           <img src="Pics/resetButton.png" id="resetBtn" value="RESET" />
         </div>
-        
       </div>
 
       <div id="gridDivs"></div>
+    </div>
+    <div id="footer">
+      <p>
+        Project Etch A Sketch from
+        <a href="https://github.com/deeddeed" target="_blank"> "DeeD"</a>
+      </p>
+      <p>
+        Coming from the
+        <a href="https://www.theodinproject.com/" target="_blank">
+          Odin Project</a
+        >
+      </p>
+      <p>Thank you very much!</p>
     </div>
 
     <script src="myscript.js"></script>
