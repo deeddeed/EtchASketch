@@ -22,10 +22,10 @@ document.getElementById("squareText").value = squareSlider.value;
 
 const grid = document.getElementById("gridDivs");
 
-let clickColor = "#FA824C";
-let moveColor = "#558C8C";
+let clickColor = "#731DD8";
+let moveColor = "#C7D66D";
 let size = squareValue;
-let divColor = "#3E505B";
+let divColor = "#747572";
 let check = "false";
 let divSize = 600/size;
 
@@ -185,7 +185,7 @@ function reset() {
   while (grid.firstChild) {
     grid.removeChild(grid.lastChild);
   }
-  divColor = "#EFF7FF";
+  divColor = "#747572";
   check = "false";
   randomBackground.style.backgroundColor = divColor;
   console.log("size is " + size);
