@@ -141,8 +141,8 @@ p{
   50% {
     transform: scale(0.4) rotate3d(-1, 1, 0, -90deg);
     /* box-shadow: 10px 10px 100px #8AB0AB; */
-    color: #747572;
-    text-shadow: 0 15px 40px #747572;
+    color: #8AB0AB;
+    text-shadow: 0 15px 40px #8AB0AB;
   }
   100% {
     transform: scale(1) rotate3d(-1, 1, 0, -180deg);
@@ -162,18 +162,6 @@ p{
   box-shadow: 10px 10px 100px #747572;
   cursor: pointer;
 
-}
-
-.hoverText {
-  justify-content: center;
-  max-width: 50px;
-  max-height: 50px;
-  font-size: 28px;
-  padding: 20px;
-  background-color: #8AB0AB;
-  border-radius: 0% 20% 20% 0%;
-  box-shadow: 10px 10px 100px #8AB0AB;
-  cursor: pointer;
 }
 
 #clickColorButton {
